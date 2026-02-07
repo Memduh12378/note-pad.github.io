@@ -1,0 +1,23 @@
+body {
+  background: #0f0f0f;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+  padding: 40px;
+}
+
+textarea {
+  width: 80%;
+  height: 300px;
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  resize: none;
+}
+
+#status {
+  margin-top: 10px;
+  color: #aaa;
+}
