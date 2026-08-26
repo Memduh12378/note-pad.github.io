@@ -8,12 +8,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&amp;display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="app-layout">
+  <!-- Ekranın Soluna Yapışık Menü Panel -->
+  <aside class="sidebar">
+    <div class="sidebar-header">Kaydedilen Notlar</div>
+    
+    <!-- Başlangıçta Boş Olan Liste Bölgesi -->
+    <div class="notes-list" id="notesList"></div>
 
-  <h1>📝 Not Defteri</h1>
-  <input type="text" id="name" placeholder="Notunuza Bir İsim Verin..." autocomplete="off">
-  <textarea id="note" placeholder="Yazmaya başla..."></textarea>
-  <p id="status">Kaydediliyor...</p>
+    <!-- Alt Kısımdaki Yeni Not Oluştur Butonu -->
+    <button class="new-note-btn" id="newNoteBtn">+ Yeni Not Oluştur</button>
+  </aside>
 
+  <!-- Ana Editör Bölgesi -->
+  <main class="editor-container">
+    <h1 class="app-title">📝 Not Defteri</h1>
+
+    <div class="editor-box">
+      <input type="text" id="noteTitleInput" placeholder="Notunuza Bir İsim Verin..." />
+      <textarea id="noteContentInput" placeholder="Yazmaya başla..."></textarea>
+    </div>
+
+    <!-- Alt Buton Grubu -->
+    <div class="action-buttons">
+      <button id="saveNoteBtn" class="action-btn">NOTU KAYDET</button>
+      <button id="saveAsNewBtn" class="action-btn">YENİ NOT OLARAK KAYDET</button>
+    </div>
+  </main>
+</div>
   <script src="script.js"></script>
 </body>
 </html>
