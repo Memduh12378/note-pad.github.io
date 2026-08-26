@@ -33,6 +33,7 @@ body {
 .app-layout {
   display: flex;
   min-height: 100vh;
+  
 }
 
 /* SOL MENÜ (Ekranın en soluna sıfırlanmış) */
@@ -55,6 +56,7 @@ body {
   border-radius: 8px;
   border: 1px solid #333;
   margin-bottom: 15px;
+  font-family: 'Comic Relief';
 }
 
 .notes-list {
@@ -67,10 +69,10 @@ body {
 
 /* Not Butonları (Simgesiz, Sade ve Tıklanabilir) */
 .note-item-btn {
-  background-color: #555555;
+  background-color: #4d4b4b;
   color: #ffffff;
   font-weight: bold;
-  border: 1px solid #777;
+  border: 1px solid #000000;
   border-radius: 8px;
   padding: 12px;
   text-align: left;
@@ -79,32 +81,50 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  scale: 0.91;
+  font-family: 'Comic Relief';
+  transition: 0.5s;
 }
 
 .note-item-btn:hover {
-  background-color: #666666;
+  background-color: #000000;
+  border-color: #ffa500;
+  transition: 0.3s;
+  scale: 0.93;
+  transition: 0.3s;
 }
 
 .note-item-btn.active {
+  transition: 0.5s;
   background-color: #ff9900;
   color: #000000;
   border-color: #ffa500;
+  scale: 0.965;
+  filter: drop-shadow(0 0 3px #ff9900);
+  transition: 0.3s;
 }
 
 /* Yeşil/Koyu Yeşil Renkli Yeni Not Oluştur Butonu */
 .new-note-btn {
   background: linear-gradient(180deg, #1b8a3e 0%, #0d5c26 100%);
-  border: 1px solid #28a745;
+  border: 2px solid #136526;
   border-radius: 8px;
-  color: white;
+  color: #ffffff;
   padding: 12px;
   font-weight: bold;
   cursor: pointer;
   font-size: 14px;
+  font-family: 'Comic Relief';
+  transition: 0.35s;
 }
 
 .new-note-btn:hover {
   filter: brightness(1.15);
+  filter: drop-shadow(0 0 5px green);
+  scale: 1.05;
+  background: #3aff00;
+  border-color: #000000;
+  color: #000000;
 }
 
 /* SAĞ EDİTÖR BÖLGESİ */
@@ -114,13 +134,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Comic Relief';
 }
 
 .app-title {
   color: #ffa500;
   font-size: 26px;
   margin-bottom: 20px;
-  text-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+  text-shadow: 0 0 5px rgb(255 165 0);
+  font-family: 'Comic Relief';
 }
 
 .editor-box {
@@ -130,24 +152,37 @@ body {
   border: 2px solid #333;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 10px rgb(255 255 255);
   display: flex;
   flex-direction: column;
   gap: 15px;
+  font-family: 'Comic Relief';
 }
 
 #noteTitleInput, #noteContentInput {
-  background-color: #2b2b2b;
-  border: 1px solid #444;
+  background-color: #ff9900;
+  border: 3px solid #000000;
   border-radius: 8px;
   color: #fff;
   padding: 12px;
   font-size: 15px;
   outline: none;
+  font-family: 'Comic Relief';
+  transition: 0.3s;
+}
+
+#noteTitleInput:hover, #noteContentInput:hover {
+  background-color: #facc28;
+  border: 3px solid #ff9900;
+  color: #000000;
+  scale: 1.01;
 }
 
 #noteTitleInput:focus, #noteContentInput:focus {
-  border-color: #ffa500;
+  background: black;
+  border-color: #ffffff;
+  color: white;
+  filter: drop-shadow(0 0 5px white);
 }
 
 #noteContentInput {
@@ -160,20 +195,25 @@ body {
   display: flex;
   gap: 15px;
   margin-top: 20px;
+  font-family: 'Comic Relief';
 }
 
 .action-btn {
   background-color: #000000;
   color: #ffffff;
-  border: 1px solid #ffffff;
+  border: 2px solid #ffffff;
   border-radius: 20px;
   padding: 10px 22px;
   font-weight: bold;
   cursor: pointer;
+  font-family: 'Comic Relief';
+  transition: 0.35s;
 }
 
 .action-btn:hover {
-  background-color: #222222;
-  border-color: #ffa500;
-  color: #ffa500;
+  scale: 1.06;
+  filter: drop-shadow(0 0 5px white);
+  background-color: #ff9900;
+  border-color: #000000;
+  color: #000000;
 }
