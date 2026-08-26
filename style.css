@@ -16,72 +16,164 @@
   cursor: pointer;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background: #0f0f0f;
-  color: white;
-  font-family: Arial;
+  background-color: #0c0c0c;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* Sayfa Düzeni: Sol taraf sabit menü, sağ taraf kalan tüm alanı kaplar */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SOL MENÜ (Ekranın en soluna sıfırlanmış) */
+.sidebar {
+  width: 260px;
+  background-color: #161616;
+  border-right: 2px solid #2a2a2a;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-header {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: bold;
   text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  margin-bottom: 15px;
+}
+
+.notes-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Not Butonları (Simgesiz, Sade ve Tıklanabilir) */
+.note-item-btn {
+  background-color: #555555;
+  color: #ffffff;
+  font-weight: bold;
+  border: 1px solid #777;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-item-btn:hover {
+  background-color: #666666;
+}
+
+.note-item-btn.active {
+  background-color: #ff9900;
+  color: #000000;
+  border-color: #ffa500;
+}
+
+/* Yeşil/Koyu Yeşil Renkli Yeni Not Oluştur Butonu */
+.new-note-btn {
+  background: linear-gradient(180deg, #1b8a3e 0%, #0d5c26 100%);
+  border: 1px solid #28a745;
+  border-radius: 8px;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.new-note-btn:hover {
+  filter: brightness(1.15);
+}
+
+/* SAĞ EDİTÖR BÖLGESİ */
+.editor-container {
+  flex: 1;
   padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h1 {
-  color: orange;
-  font-family:'Comic Relief', sans-serif;
-  font-weight: 900;
-  filter: drop-shadow(0 0 10px orange);
+.app-title {
+  color: #ffa500;
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
 }
 
-#name {
-  width: 1000px;
-  height: 10px;
-  margin: 10px;
-  background: #1a1a1a;
-  color: white;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 15px;
-  font-family: 'Comic Relief', sans-serif;
-  font-size: 20px;
-  font-weight: 900;
-  filter: drop-shadow(0 0 10px white);
-  resize: none;
-  transition: 0.4s;
+.editor-box {
+  width: 100%;
+  max-width: 900px;
+  background-color: #1c1c1c;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-#name:focus {
-  background: wheat;
-  border: 2px solid wheat;
-  color: black;
+#noteTitleInput, #noteContentInput {
+  background-color: #2b2b2b;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #fff;
+  padding: 12px;
+  font-size: 15px;
+  outline: none;
 }
 
-#note {
-  width: 1000px;
-  height: 530px;
-  background: #1a1a1a;
-  color: white;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 15px;
-  font-family: 'Comic Relief', sans-serif;
-  font-size: 20px;
-  font-weight: 900;
-  filter: drop-shadow(0 0 10px white);
-  resize: none;
-  transition: 0.4s;
+#noteTitleInput:focus, #noteContentInput:focus {
+  border-color: #ffa500;
 }
 
-#note:focus {
-  background: wheat;
-  border: 2px solid wheat;
-  color: black;
+#noteContentInput {
+  height: 450px;
+  resize: vertical;
 }
 
-#status {
-  margin-top: 10px;
-  color: #ff8900;
-  font-weight: 900;
-  filter: drop-shadow(0 0 10px orange);
-  font-family:'Comic Relief', sans-serif;
-  font-size: 20px;
+/* Alt Buton Grubu */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
 
+.action-btn {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  padding: 10px 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.action-btn:hover {
+  background-color: #222222;
+  border-color: #ffa500;
+  color: #ffa500;
 }
